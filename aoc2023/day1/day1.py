@@ -1,16 +1,27 @@
-class Calculations:
-    def __init__(self, a, b):
+class Calibration:
+    def __init__(self, a):
         self.a = a
-        self.b = b
 
     def get_sum(self):
-        return self.a + self.b
+        if len(self.a) == 0:
+            return 0
+        else:
+            return int(self.a[0] + self.a[-1])
 
-    def get_difference(self):
-        return self.a - self.b
+#calculate total sum
+sum = 0
+with open("input","r") as fp:
+    lines = fp.readlines()
+for line in lines:
+    digit_list=[]
+    for i in line:
+        if i.isdigit():
+            digit_list.append(i)
+    calibration=Calibration(digit_list)        
+    line_digit=calibration.get_sum()
+    sum+=line_digit
+print(sum)
 
-    def get_product(self):
-        return self.a * self.b
 
-    def get_quotient(self):
-        return self.a / self.b
+
+

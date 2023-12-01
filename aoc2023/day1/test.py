@@ -1,23 +1,15 @@
 import unittest
-from day1 import Calculations
+from day1 import Calibration
 
-class TestCalculations(unittest.TestCase):
+class TestCalibrations(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(self):
-        self.calculation = Calculations(8, 2)
+    def test_sum_empty(self):
+        self.calibration = Calibration([])
+        self.assertEqual(self.calibration.get_sum(), 0, 'The sum is wrong.')
 
-    def test_sum(self):
-        self.assertEqual(self.calculation.get_sum(), 10, 'The sum is wrong.')
-
-    def test_diff(self):
-        self.assertEqual(self.calculation.get_difference(), 6, 'The difference is wrong.')
-
-    def test_product(self):
-        self.assertEqual(self.calculation.get_product(), 16, 'The product is wrong.')
-
-    def test_quotient(self):
-        self.assertEqual(self.calculation.get_quotient(), 4, 'The quotient is wrong.')
+    def test_sum_nonempty(self):
+        self.calibration = Calibration(["1","2","3"])
+        self.assertEqual(self.calibration.get_sum(), 13, 'The sum is wrong.')
 
 if __name__ == '__main__':
     unittest.main()
