@@ -121,8 +121,7 @@ for line in line_m:
     row_index+=1
     
 sum=0
-print(partno_list)        
 for partno in partno_list:
     sum+=int(partno)
-
+print(len(partno_list))
 print(sum)
