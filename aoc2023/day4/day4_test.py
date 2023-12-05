@@ -35,38 +35,21 @@ total_scratch_cards=copies_winning_count[:]
 
 print(copies_winning_count)
 
-index=1
-number=2
-origin_index=1
-for l in origininal_winning_count[1:]:
-  #  print("original: ",l)
-    copies=int(l)
 
-  
-    for m in copies_winning_count:
-        m_len=len(m)
- #       print("m: ", m)
-        for k in range(index,copies+index):
+index=0
+number=2
+for j in origininal_winning_count[1:]:
+    copies=int(j)
+    if len(i)>0:
+        print(i,index)
+        index+=1
+    for i in copies_winning_count:
+        
+        for k in range(index,index+copies):
             if k >=total_lines-1:
                 break
-            #print("copies: ",l, "start: ", index, "end: ",copies+index, "k: ", k)
-            #if len(copies_winning_count[index])>0:
-            if len(m) >0:
-#print("copies: ", k, copies_winning_count[k])
-                copies_winning_count[k].append(number)
-                print("number: ",number, copies, origin_index)
-                number+=1
-                print(m)
-            print(m_len)
-           
-        if m_len == 1:
-            index+=1
-    index+=1
-    origin_index+=1
+            copies_winning_count[k].append(number)
+            
 
-
-       
+        print("number: ",number, copies)
 print(copies_winning_count)
-print(origininal_winning_count)
-#print(sum)
-
